@@ -1,18 +1,18 @@
-import React from 'react'
-import {useContext} from 'react'
+import React,{useContext} from 'react'
 import {useHistory} from 'react-router-dom'
-import loginContext from '../Context/loginContext'
+import loginContext  from "../Context/loginContext";
 import hex from '../Components/hexagon-1743514_1920-removebg-preview.png'
 
 export default function Login() {
-    const context=useContext(loginContext)
-    const history=useHistory()
-    function submit(event) {
-        event.preventDefault()
-        context.sign()
-        history.push('/')
-        
-    }
+    
+  const context = useContext(loginContext);
+  const history=useHistory();
+   
+  const login=()=>{
+    context.changeLogin(true)
+    history.push("/")
+  }
+      
     return (
        <div className="body" style={{marginTop:100}}>
           <div className="form row rounded ">
@@ -31,7 +31,7 @@ export default function Login() {
     <input type="password" className="form-control w-50" id="exampleInputPassword1"/>
   </div>
  
-  <button type="button" className="btn btn-primary" onClick={(event)=>{submit(event)}}>Login</button>
+  <button type="button" className="btn btn-primary" onClick={login}>Login</button>
 </form>
 </div>
       </div>

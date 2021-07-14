@@ -1,16 +1,11 @@
-import React from 'react'
-import {useHistory} from 'react-router-dom'
-import loginContext from '../Context/loginContext'
-import {useContext} from 'react'
+import React, { Component } from 'react'
 
-export default function () {
-    const context=useContext(loginContext)
-    const history=useHistory()
-    context.sign()
-    history.push('/')
-    return (
-        <div>
-            
-        </div>
-    )
+export default class Logout extends Component {
+    render() {
+        return (
+            <div>
+                <h1>please login</h1>
+            </div>
+        )
+    }
 }
